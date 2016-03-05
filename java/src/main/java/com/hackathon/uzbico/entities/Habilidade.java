@@ -1,9 +1,14 @@
 package com.hackathon.uzbico.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Habilidades {
+public class Habilidade implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 946395795383789312L;
 	private Long id;
 	private String titulo;
 	private List<Usuario> usuarios;

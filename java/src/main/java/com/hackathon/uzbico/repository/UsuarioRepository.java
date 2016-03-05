@@ -6,12 +6,12 @@ import com.hackathon.uzbico.entities.Usuario;
 
 public interface UsuarioRepository {
 
-	public List<Usuario> findAll();
+	List<Usuario> findAll();
 
-	public Usuario findByName(String name);
+	Usuario findByName(String name);
 
-	public Usuario save(Usuario usuario);
+	Usuario save(Usuario usuario);
 
-	public void deleteByCPF(String cpf);
+	void deleteByCPF(String cpf);
 
 }

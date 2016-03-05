@@ -38,7 +38,7 @@ public class Usuario implements Serializable {
 	private String telefone;
 
 	@JoinTable(name = "habilidadeUsuario", joinColumns = { @JoinColumn(name = "cpf") }, inverseJoinColumns = { @JoinColumn(name = "id") })
-	private List<Habilidades> habilidades;
+	private List<Habilidade> habilidades;
 
 	public String getCpf() {
 		return cpf;
@@ -72,11 +72,11 @@ public class Usuario implements Serializable {
 		this.telefone = telefone;
 	}
 
-	public List<Habilidades> getHabilidades() {
+	public List<Habilidade> getHabilidades() {
 		return habilidades;
 	}
 
-	public void setHabilidades(List<Habilidades> habilidades) {
+	public void setHabilidades(List<Habilidade> habilidades) {
 		this.habilidades = habilidades;
 	}
 

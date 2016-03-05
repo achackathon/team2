@@ -1,10 +1,8 @@
 package com.hackathon.uzbico.resource;
 
-import javax.ws.rs.Path;
-
 import com.hackathon.uzbico.repository.impl.UsuarioRepositoryImpl;
 
-@Path("/usuario")
+//@Path("/usuario")
 public class UsuarioResource {
 
 	static UsuarioRepositoryImpl repository = new UsuarioRepositoryImpl();
