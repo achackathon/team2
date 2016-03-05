@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">UzBico</string>
+	<string name="app_name">UzBico</string>
+
+	<string name="lcpf">CPF</string>
+	<string name="lnome">Nome</string>
+	<string name="lsenha">Senha</string>
+	<string name="lemail">Email</string>
+	<string name="lfone">Fone</string>
+	<string name="bsalvar">Salvar</string>
+
 </resources>

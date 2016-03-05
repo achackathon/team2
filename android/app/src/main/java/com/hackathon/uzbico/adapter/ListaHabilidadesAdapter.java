@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,20 +17,23 @@ import java.util.List;
 public class ListaHabilidadesAdapter extends RecyclerView.Adapter<ListaHabilidadesAdapter.ViewHolder> {
 
     private List<HabilidadeUsuario> habilidadesList;
-
-    public static final int SENDER = 0;
-    public static final int RECIPIENT = 1;
+    private Context context;
 
     public ListaHabilidadesAdapter(Context context, List<HabilidadeUsuario> messages) {
-        habilidadesList = messages;
+        this.habilidadesList = messages;
+        this.context = context;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextView;
+        public TextView lhabilidades;
+        public TextView lnome;
+        public LinearLayout llavaliacao;
 
         public ViewHolder(LinearLayout v) {
             super(v);
-            mTextView = (TextView) v.findViewById(R.id.text);
+            lhabilidades = (TextView) v.findViewById(R.id.lhabilidades);
+            lnome = (TextView) v.findViewById(R.id.lnome);
+            llavaliacao = (LinearLayout) v.findViewById(R.id.llavaliacao);
         }
     }
 
@@ -50,8 +54,21 @@ public class ListaHabilidadesAdapter extends RecyclerView.Adapter<ListaHabilidad
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.mTextView.setText(habilidadesList.get(position).getMessage());
-        holder.mTextView.setOnClickListener(new View.OnClickListener() {
+        holder.lhabilidades.setText(habilidadesList.get(position).getMessage());
+        holder.lnome.setText(habilidadesList.get(position).getSenderName());
+
+        holder.llavaliacao.removeAllViews();
+        for(int index = 0; index < habilidadesList.get(position).getId(); index++){
+            ImageView icon = new ImageView(context);
+            icon.setImageResource(android.R.drawable.btn_star_big_on);
+            icon.setAdjustViewBounds(true);
+            icon.setScaleType(ImageView.ScaleType.FIT_XY);
+            icon.setVisibility(View.VISIBLE);
+
+            holder.llavaliacao.addView(icon);
+        }
+
+        holder.lhabilidades.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 remove(position);
@@ -67,13 +84,7 @@ public class ListaHabilidadesAdapter extends RecyclerView.Adapter<ListaHabilidad
     @Override
     public int getItemViewType(int position) {
         HabilidadeUsuario message = habilidadesList.get(position);
-
-        if (message.getSenderName().equals("Chryssa")) {
-            return SENDER;
-        } else {
-            return RECIPIENT;
-        }
-
+        return 0;
     }
 
 }

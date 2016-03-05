@@ -13,16 +13,18 @@ public class Cadastro implements Serializable {
     private String senha;
     private String email;
     private String fone;
+    private int avaliacao;
 
     public Cadastro() {
     }
 
-    public Cadastro(String cpf, String nome, String senha, String email, String fone) {
+    public Cadastro(String cpf, String nome, String senha, String email, String fone, int avaliacao) {
         this.cpf = cpf;
         this.nome = nome;
         this.senha = senha;
         this.email = email;
         this.fone = fone;
+        this.avaliacao = avaliacao;
     }
 
     public String getCpf() {
@@ -63,5 +65,13 @@ public class Cadastro implements Serializable {
 
     public void setFone(String fone) {
         this.fone = fone;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
