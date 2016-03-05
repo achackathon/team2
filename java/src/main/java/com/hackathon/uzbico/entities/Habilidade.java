@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 import com.sun.istack.internal.NotNull;
 
 @Table(name="habilidade")
+@Entity
 public class Habilidade implements Serializable {
 
 	/**
