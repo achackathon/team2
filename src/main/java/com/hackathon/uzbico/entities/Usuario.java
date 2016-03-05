@@ -2,6 +2,11 @@ package com.hackathon.uzbico.entities;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "usuario")
 public class Usuario {
 
 	private String cpf;
