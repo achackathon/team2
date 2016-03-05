@@ -14,6 +14,9 @@ import com.hackathon.uzbico.model.HabilidadeUsuario;
 
 import java.util.List;
 
+/**
+ * Adaptador da lista de itens exibidas na pesquisa de Habilidades.
+ */
 public class ListaHabilidadesAdapter extends RecyclerView.Adapter<ListaHabilidadesAdapter.ViewHolder> {
 
     private List<HabilidadeUsuario> habilidadesList;
@@ -83,7 +86,6 @@ public class ListaHabilidadesAdapter extends RecyclerView.Adapter<ListaHabilidad
 
     @Override
     public int getItemViewType(int position) {
-        HabilidadeUsuario message = habilidadesList.get(position);
         return 0;
     }
 

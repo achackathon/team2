@@ -6,10 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.hackathon.uzbico.R;
 import com.hackathon.uzbico.business.CadastroBusiness;
 
+/**
+ * Activity da tela de Cadastro de usuarios
+ */
 public class CadastroActivity extends AppCompatActivity {
 
     private EditText tcpf;
@@ -37,13 +41,12 @@ public class CadastroActivity extends AppCompatActivity {
                 CadastroBusiness.add(CadastroActivity.this, tcpf.getText().toString(), tnome.getText().toString(),
                         tsenha.getText().toString(), temail.getText().toString(), tfone.getText().toString());
 
+                Toast.makeText(CadastroActivity.this, "Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+
+                Intent recyclerIntent = new Intent(getApplicationContext(), ListaHabilidadesActivity.class);
+                startActivity(recyclerIntent);
+
             }
         });
-
-        // get all competencias
-
-
-
-
     }
 }

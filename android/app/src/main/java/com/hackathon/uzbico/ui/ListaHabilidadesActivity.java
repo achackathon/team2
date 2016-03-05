@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 import com.hackathon.uzbico.R;
 import com.hackathon.uzbico.adapter.ListaHabilidadesAdapter;
@@ -22,6 +21,9 @@ import com.melnykov.fab.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Activity para exibicao da listagem de Habilidades.
+ */
 public class ListaHabilidadesActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
@@ -75,38 +77,42 @@ public class ListaHabilidadesActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
 
+        final List<HabilidadeUsuario> bkp = new ArrayList<HabilidadeUsuario>(messageList);
+
         getMenuInflater().inflate(R.menu.menu_habilidades_usuario, menu);
         final MenuItem searchItem = menu.findItem(R.id.menu_search);
         if (searchItem != null) {
             SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
             final SearchView view = (SearchView) searchItem.getActionView();
             if (view == null) {
-                //  LOGW(TAG, "Could not set up search view, view is null.");
+
             } else {
                 view.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
                 view.setIconified(true);
+
                 view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
                     @Override
                     public boolean onQueryTextSubmit(String s) {
-                        //view.clearFocus();
-
                         return true;
                     }
 
                     @Override
                     public boolean onQueryTextChange(final String s) {
-                        if (s.length() > 2) {
-                            Toast.makeText(ListaHabilidadesActivity.this, "MauMau, kd minha API REST??", Toast.LENGTH_SHORT).show();
-                            //     DataBusiness.getTagsFilterOptionsAsync(getApplicationContext(), s, getTagsFilterOptionsCallbacks);
 
+                        if (s.length() > 2) {
                             messageList.clear();
-                            messageList.add(new HabilidadeUsuario(1, "Ei, MauMau...", "Ei, MauMau..."));
-                            messageList.add(new HabilidadeUsuario(2, "Kd minha API REST, MauMau??", "Kd minha API REST, MauMau??"));
+
+                            messageList.add(new HabilidadeUsuario(1, "Pintor de muro", "Jonas Silveira"));
+                            messageList.add(new HabilidadeUsuario(2, "Pintor de rodape", "Mauricio Aguilar"));
+                            messageList.add(new HabilidadeUsuario(3, "Pintora de quadros", "Tina Turner"));
 
                             mAdapter = new ListaHabilidadesAdapter(getBaseContext(), messageList);
                             mRecyclerView.setAdapter(mAdapter);
                             mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+                        } else if ("".equals(s)) {
+                            messageList = bkp;
                         }
                         return true;
                     }
