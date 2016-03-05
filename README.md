@@ -1,6 +1,6 @@
 # UzBico
 
-##Participantes:
+###Participantes:
 Eduardo Mota <br/>
 Frederico Voria <br/>
 Maurício Aguilar <br/>
