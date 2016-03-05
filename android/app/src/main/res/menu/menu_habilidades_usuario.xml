@@ -10,7 +10,7 @@
         app:showAsAction="always" />
 
     <item android:id="@+id/menu_filter"
-        android:icon="@android:drawable/ic_notification_overlay"
+        android:icon="@android:drawable/ic_input_add"
         android:title="Filter"
         android:orderInCategory="2"
         app:showAsAction="always" />

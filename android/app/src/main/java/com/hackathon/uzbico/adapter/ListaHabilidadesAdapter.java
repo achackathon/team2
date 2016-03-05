@@ -55,7 +55,9 @@ public class ListaHabilidadesAdapter extends RecyclerView.Adapter<ListaHabilidad
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.lhabilidades.setText(habilidadesList.get(position).getMessage());
+        holder.lnome.setText(habilidadesList.get(position).getSenderName());
 
+        holder.llavaliacao.removeAllViews();
         for(int index = 0; index < habilidadesList.get(position).getId(); index++){
             ImageView icon = new ImageView(context);
             icon.setImageResource(android.R.drawable.btn_star_big_on);

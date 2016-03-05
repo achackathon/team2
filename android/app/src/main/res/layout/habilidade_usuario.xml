@@ -51,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:orientation="horizontal"
-            android:paddingLeft="4dp"
+            android:paddingLeft="2dp"
             android:paddingRight="4dp"
             android:paddingTop="3dp"
             android:paddingBottom="3dp" >

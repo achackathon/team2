@@ -2,6 +2,7 @@ package com.hackathon.uzbico.ui;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -9,12 +10,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.hackathon.uzbico.R;
 import com.hackathon.uzbico.adapter.ListaHabilidadesAdapter;
 import com.hackathon.uzbico.model.HabilidadeUsuario;
+import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ public class ListaHabilidadesActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<HabilidadeUsuario> messageList = new ArrayList<HabilidadeUsuario>();
+    private FloatingActionButton fabAdicionar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +45,30 @@ public class ListaHabilidadesActivity extends AppCompatActivity {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         fillWithNonsenseText();
+
+        fabAdicionar = (FloatingActionButton)  findViewById(R.id.fab);
+        fabAdicionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recyclerIntent = new Intent(getApplicationContext(), CadastroActivity.class);
+                startActivity(recyclerIntent);
+
+            }
+        });
     }
 
     public void fillWithNonsenseText() {
-        messageList.add(new HabilidadeUsuario(1, "Bombeiro", "Bombeiro: habil em encanamentos..."));
-        messageList.add(new HabilidadeUsuario(2, "Costura", "Costureira com capacidade de overlock"));
-        messageList.add(new HabilidadeUsuario(3, "Chaveiro", "Licenca pra chaveiro, conserto e abertura de portas"));
-        messageList.add(new HabilidadeUsuario(4, "Cuidador de idosos", "Cuidados com os mais experientes"));
-        messageList.add(new HabilidadeUsuario(5, "Babysitter", "Cuidar de crianças, inclusive alimentação"));
-        messageList.add(new HabilidadeUsuario(6, "Dogwalker", "Caminhar com cães quando o dono nao pode"));
-        messageList.add(new HabilidadeUsuario(7, "Organizador de micro eventos", "Arranjo seu churrasco, happy hour..."));
-        messageList.add(new HabilidadeUsuario(8, "Sabadão é dia de...", "Kd minha API REST, MauMau??"));
-        messageList.add(new HabilidadeUsuario(9, "Programar!!", "Kd minha API REST, MauMau??"));
-        messageList.add(new HabilidadeUsuario(10, "Bora lá!!!", "Kd minha API REST, MauMau??"));
-        messageList.add(new HabilidadeUsuario(11, "Tá quaaaaseeee!!", "Kd minha API REST, MauMau??"));
+        messageList.add(new HabilidadeUsuario(1, "Pintor de rodape", "Mauricio Aguilar"));
+        messageList.add(new HabilidadeUsuario(3, "Trocador de lampada", "Sebastian Vetel"));
+        messageList.add(new HabilidadeUsuario(1, "Bombeiro", "Andre Luis"));
+        messageList.add(new HabilidadeUsuario(2, "Costura", "Maria Socorro"));
+        messageList.add(new HabilidadeUsuario(3, "Chaveiro", "Ze Henrique"));
+        messageList.add(new HabilidadeUsuario(4, "Cuidador de idosos", "Tamara Sousa"));
+        messageList.add(new HabilidadeUsuario(5, "Babysitter", "Jennifer Silva"));
+        messageList.add(new HabilidadeUsuario(6, "Dogwalker", "Tomaz Rabelo"));
+        messageList.add(new HabilidadeUsuario(7, "Organizador de micro eventos", "Joao Venancio"));
+        messageList.add(new HabilidadeUsuario(8, "Encanador", "Paulo Roberto"));
+        messageList.add(new HabilidadeUsuario(9, "Mecanico de bicicleta", "Vander Lust"));
     }
 
     @Override

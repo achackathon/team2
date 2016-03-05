@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.hackathon.uzbico.R;
+import com.hackathon.uzbico.business.CadastroBusiness;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -33,11 +34,8 @@ public class CadastroActivity extends AppCompatActivity {
         bsalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //CadastroBusiness.add(CadastroActivity.this, tcpf.getText().toString(), tnome.getText().toString(),
-                //        tsenha.getText().toString(), temail.getText().toString(), tfone.getText().toString());
-
-                Intent recyclerIntent = new Intent(getApplicationContext(), ListaHabilidadesActivity.class);
-                startActivity(recyclerIntent);
+                CadastroBusiness.add(CadastroActivity.this, tcpf.getText().toString(), tnome.getText().toString(),
+                        tsenha.getText().toString(), temail.getText().toString(), tfone.getText().toString());
 
             }
         });
