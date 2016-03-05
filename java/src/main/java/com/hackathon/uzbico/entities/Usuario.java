@@ -3,6 +3,17 @@ package com.hackathon.uzbico.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
+
+@Table(name = "usuario")
+@Entity
 public class Usuario implements Serializable {
 
 	/**
@@ -10,11 +21,24 @@ public class Usuario implements Serializable {
 	 */
 	private static final long serialVersionUID = 7316572034795519469L;
 
+	@Id
+	@NotNull
+	@Column(name = "cpf")
 	private String cpf;
+
+	@NotNull
+	@Column(name = "nome")
 	private String nome;
+
+	@NotNull
+	@Column(name = "senha")
 	private String senha;
+
+	@Column(name = "telefone")
 	private String telefone;
-	private List<Habilidades> competencias;
+
+	@JoinTable(name = "habilidadeUsuario", joinColumns = { @JoinColumn(name = "cpf") }, inverseJoinColumns = { @JoinColumn(name = "id") })
+	private List<Habilidades> habilidades;
 
 	public String getCpf() {
 		return cpf;
@@ -48,12 +72,12 @@ public class Usuario implements Serializable {
 		this.telefone = telefone;
 	}
 
-	public List<Habilidades> getCompetencias() {
-		return competencias;
+	public List<Habilidades> getHabilidades() {
+		return habilidades;
 	}
 
-	public void setCompetencias(List<Habilidades> competencias) {
-		this.competencias = competencias;
+	public void setHabilidades(List<Habilidades> habilidades) {
+		this.habilidades = habilidades;
 	}
 
 }

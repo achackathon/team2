@@ -9,7 +9,9 @@
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">false</property>
 		<property name="hbm2ddl.auto">update</property> <!-- Livro -->
+		
 		<mapping class="com.hackathon.uzbico.entities.Usuario" />
+		<mapping class="com.hackathon.uzbico.entities.Habilidade" />
 
 	</session-factory>
 </hibernate-configuration>
