@@ -14,7 +14,7 @@ public class Usuario implements Serializable {
 	private String nome;
 	private String senha;
 	private String telefone;
-	private List<Competencia> competencias;
+	private List<Habilidades> competencias;
 
 	public String getCpf() {
 		return cpf;
@@ -48,11 +48,11 @@ public class Usuario implements Serializable {
 		this.telefone = telefone;
 	}
 
-	public List<Competencia> getCompetencias() {
+	public List<Habilidades> getCompetencias() {
 		return competencias;
 	}
 
-	public void setCompetencias(List<Competencia> competencias) {
+	public void setCompetencias(List<Habilidades> competencias) {
 		this.competencias = competencias;
 	}
 

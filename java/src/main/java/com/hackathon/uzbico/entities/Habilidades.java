@@ -2,7 +2,7 @@ package com.hackathon.uzbico.entities;
 
 import java.util.List;
 
-public class Competencia {
+public class Habilidades {
 
 	private Long id;
 	private String titulo;
