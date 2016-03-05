@@ -2,6 +2,7 @@ package com.hackathon.uzbico.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,8 @@ import com.hackathon.uzbico.repository.impl.UsuarioRepositoryImpl;
 @RequestMapping("/usuarios")
 public class UsuarioService {
 
-	static UsuarioRepository repository = new UsuarioRepositoryImpl();
+	@Autowired
+	private UsuarioRepository repository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Usuario>> findAll() {
