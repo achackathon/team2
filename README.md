@@ -1,7 +1,7 @@
 # team2
 
 ##Participantes:
-br/Eduardo Mota
+Eduardo Mota <br/>
 Frederico Voria
 Maurício Aguilar
 Thabita Aroeira
