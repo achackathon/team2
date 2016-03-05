@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hackathon.uzbico.entities.Usuario;
 import com.hackathon.uzbico.repository.UsuarioRepository;
-import com.hackathon.uzbico.repository.impl.UsuarioRepositoryImpl;
 
 @RestController
 @RequestMapping("/usuarios")
