@@ -21,7 +21,7 @@
             android:id="@+id/lcpf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CPF"
+            android:text="@strings/lcpf"
             android:textAppearance="?android:attr/textAppearanceSmall"
             />
 
@@ -44,7 +44,7 @@
             android:id="@+id/lnome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Small Text"
+            android:text="@strings/lnome"
             android:textAppearance="?android:attr/textAppearanceSmall"
             />
 
@@ -68,7 +68,7 @@
             android:id="@+id/lsenha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Small Text"
+            android:text="@strings/lsenha"
             android:textAppearance="?android:attr/textAppearanceSmall"
             />
 
@@ -93,7 +93,7 @@
             android:id="@+id/lemail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Small Text"
+            android:text="@strings/lemail"
             android:textAppearance="?android:attr/textAppearanceSmall"
             />
 
@@ -118,7 +118,7 @@
             android:id="@+id/lfone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Small Text"
+            android:text="@strings/lfone"
             android:textAppearance="?android:attr/textAppearanceSmall"
             />
 
@@ -138,7 +138,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="New Button"
+        android:paddingLeft="80dip"
+    	android:paddingRight="26dip"
+        android:text="@strings/bsalvar"
         />
 
 
