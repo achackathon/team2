@@ -1,6 +1,6 @@
 # team2
 
-Paricipantes:
+Participantes:
 Eduardo Mota
 Frederico Voria
 Maurício Aguilar
