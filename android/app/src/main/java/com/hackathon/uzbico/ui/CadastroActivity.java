@@ -1,5 +1,6 @@
 package com.hackathon.uzbico.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -7,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.hackathon.uzbico.R;
-import com.hackathon.uzbico.business.CadastroBusiness;
-import com.hackathon.uzbico.model.Cadastro;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -22,6 +21,7 @@ public class CadastroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cadastro);
 
         tcpf = (EditText) findViewById(R.id.tcpf);
         tnome = (EditText) findViewById(R.id.tnome);
@@ -33,8 +33,12 @@ public class CadastroActivity extends AppCompatActivity {
         bsalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CadastroBusiness.add(CadastroActivity.this, tcpf.getText().toString(), tnome.getText().toString(),
-                        tsenha.getText().toString(), temail.getText().toString(), tfone.getText().toString());
+                //CadastroBusiness.add(CadastroActivity.this, tcpf.getText().toString(), tnome.getText().toString(),
+                //        tsenha.getText().toString(), temail.getText().toString(), tfone.getText().toString());
+
+                Intent recyclerIntent = new Intent(getApplicationContext(), ListaHabilidadesActivity.class);
+                startActivity(recyclerIntent);
+
             }
         });
 
@@ -42,6 +46,6 @@ public class CadastroActivity extends AppCompatActivity {
 
 
 
-        setContentView(R.layout.activity_cadastro);
+
     }
 }
