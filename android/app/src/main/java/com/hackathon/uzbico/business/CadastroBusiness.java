@@ -12,7 +12,7 @@ import com.koushikdutta.ion.Response;
 public class CadastroBusiness {
 
     public static boolean add(Context context, String cpf, String nome, String senha, String email, String fone) {
-        Cadastro cad = new Cadastro(cpf, nome, senha, email, fone);
+        Cadastro cad = new Cadastro(cpf, nome, senha, email, fone, 5);
 
         JsonObject json = new JsonObject();
         json.addProperty("cpf", cpf);
