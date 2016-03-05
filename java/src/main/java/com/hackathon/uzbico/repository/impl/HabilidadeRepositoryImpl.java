@@ -38,4 +38,8 @@ public class HabilidadeRepositoryImpl implements HabilidadeRepository {
 				.createQuery("from Habilidade where tilulo like %" + name + "%");
 	}
 
+	public void update(Habilidade habilidade) {
+		this.sessionFactory.getCurrentSession().update(habilidade);
+	}
+
 }

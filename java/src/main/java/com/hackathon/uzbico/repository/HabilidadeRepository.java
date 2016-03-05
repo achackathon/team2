@@ -14,4 +14,6 @@ public interface HabilidadeRepository {
 
 	Habilidade findByName(String name);
 
+	void update(Habilidade habilidade);
+
 }
