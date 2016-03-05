@@ -3,14 +3,31 @@ package com.hackathon.uzbico.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import com.sun.istack.internal.NotNull;
+
+@Table(name="habilidade")
 public class Habilidade implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 946395795383789312L;
+	
+	@Id
+	@Column(name="id")
+	@NotNull
 	private Long id;
+	
+	@NotNull
+	@Column(name="titulo")
 	private String titulo;
+	
+	@ManyToMany(mappedBy="habilidades")
 	private List<Usuario> usuarios;
 
 	public Long getId() {
