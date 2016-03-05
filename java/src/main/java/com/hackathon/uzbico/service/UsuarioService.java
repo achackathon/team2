@@ -23,7 +23,7 @@ public class UsuarioService {
 	public Usuario insert(Usuario usuario) {
 		return repository.save(usuario);
 	}
-
+	
 	@RequestMapping("/delete")
 	public void deleteByCPF(String cpf) {
 		repository.deleteByCPF(cpf);
