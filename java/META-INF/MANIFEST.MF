@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: uzbico
+Bundle-SymbolicName: uzbico
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.hackathon.uzbico,
+ com.hackathon.uzbico.entities,
+ com.hackathon.uzbico.factory,
+ com.hackathon.uzbico.repository,
+ com.hackathon.uzbico.repository.impl,
+ com.hackathon.uzbico.resource,
+ com.hackathon.uzbico.service
